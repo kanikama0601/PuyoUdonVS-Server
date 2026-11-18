@@ -1,9 +1,17 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
+  <!-- ぷようどんVS サーバー（企画書 6.4 のプロトコルを実装した WebSocket サーバー） -->
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <RootNamespace>PuyoUdonVS_Server</RootNamespace>
     <TargetFramework>net10.0</TargetFramework>
+    <OptionStrict>On</OptionStrict>
+    <OptionInfer>On</OptionInfer>
   </PropertyGroup>
+
+  <ItemGroup>
+    <!-- WebSocket の待ち受けに ASP.NET Core（Kestrel）を使う。管理者権限なしで 0.0.0.0 に bind できる。 -->
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
 
 </Project>
